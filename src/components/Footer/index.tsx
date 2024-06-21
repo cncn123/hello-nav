@@ -2,19 +2,18 @@ import './index.less'
 
 const Footer = () => (
   <div className="footer__wrap">
-    <a href="https://github.com/hello-nav/hello-nav" className="logo vertical-center">
-      hello-nav github
+    <a href="https://github.com/cncn123/hello-nav" className="logo vertical-center">
+      Bobby Space
     </a>
     <div className="footer__copyright">
       <span className="vertical-center">
-        Made by
-        <a className="bener-link" href="https://github.com/Heroor">
-          <b> Bener </b>
+        Presented by
+        <a className="bener-link" href="https://github.com/cncn123/hello-nav">
+          <b> Bobby </b>
         </a>
         with
-        <span className="heart"> ❤</span>
+        <span> 💻</span>
       </span>
-      <p>&copy;2018-{new Date().getFullYear()} Hello Nav.</p>
     </div>
   </div>
 )
