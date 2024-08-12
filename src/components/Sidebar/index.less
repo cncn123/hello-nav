@@ -1,0 +1,116 @@
+.sidebar {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border-radius: 24px;
+    padding: 8px 7px;
+    background: var(--nav-filter-bg);
+    box-shadow: var(--nav-shadow);
+    backdrop-filter: blur(20px);
+    transition:
+      background 0.3s,
+      margin 0.4s,
+      padding 0.4s;
+    transition-timing-function: cubic-bezier(0.6, 0.6, 0, 1);
+    &:hover {
+      padding: 8px 9px;
+      margin-left: -10px;
+      a {
+        width: 160px;
+        padding: 8px 12px;
+        .sidebar__title {
+          opacity: 1;
+          transition: opacity 0.55s;
+        }
+      }
+      + .go-top {
+        transform: scale(0) !important;
+        opacity: 0 !important;
+      }
+    }
+    a {
+      box-sizing: border-box;
+      width: 34px;
+      display: flex;
+      overflow: hidden;
+      line-height: 18px;
+      padding: 8px;
+      border-radius: 30px;
+      color: var(--nav-filter-color);
+      transition:
+        color 0.3s,
+        padding 0.4s,
+        width 0.4s;
+      transition-timing-function: cubic-bezier(0.6, 0.6, 0, 1);
+      &:hover,
+      &:active,
+      &.active {
+        background: var(--nav-action-item-bg);
+        // background-size: var(--nav-action-item-bg-size);
+      }
+      .sidebar__title {
+        opacity: 0;
+        font-weight: bold;
+        font-size: 12px;
+        margin-left: 8px;
+        transition: opacity 0.4s;
+        transition-timing-function: cubic-bezier(0.6, 0.6, 0, 1);
+      }
+      .icon {
+        font-size: 18px;
+      }
+    }
+  }
+  .go-top {
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 4px;
+    border-radius: 30px;
+    color: var(--nav-filter-color);
+    background: var(--nav-filter-bg);
+    font-size: 18px;
+    box-shadow: var(--nav-shadow);
+    backdrop-filter: blur(20px);
+    transition:
+      0.3s,
+      transform 0.4s,
+      opacity 0.4s;
+    transition-timing-function: cubic-bezier(0.6, 0.6, 0, 1);
+    transform: scale(0);
+    opacity: 0;
+    &.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+    &:hover,
+    &:active {
+      background: var(--nav-filter-bg-hover);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1560px) {
+  .sidebar {
+    left: 40px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .sidebar {
+    left: 45px;
+  }
+}

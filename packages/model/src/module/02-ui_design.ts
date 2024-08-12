@@ -111,6 +111,7 @@ export default <AppItem[]>[
     icon: 'inkline.png',
     keywords: ['inkline', 'vue', 'ui'],
     name: 'Inkline',
+    darkInvert: true,
   },
   {
     homepage: 'https://veui.dev/',
@@ -622,5 +623,12 @@ export default <AppItem[]>[
     icon: 'ui8.png',
     keywords: ['ui8'],
     name: 'UI8',
+  },
+  {
+    homepage: 'https://layers.to/',
+    icon: 'layers.png',
+    keywords: ['layers'],
+    name: 'Layers',
+    darkInvert: true,
   },
 ]

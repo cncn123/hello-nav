@@ -39,13 +39,20 @@ export default <AppItem[]>[
     homepage: 'https://gemini.google.com/',
     icon: 'bard.png',
     keywords: ['bard', 'gemini', 'ai'],
-    name: 'Bard',
+    name: 'Gemini',
   },
   {
     homepage: 'https://www.perplexity.ai/',
     icon: 'perplexity.png',
     keywords: ['perplexity', 'ai'],
     name: 'Perplexity',
+  },
+  {
+    homepage: 'https://runwayml.com/',
+    icon: 'runway.png',
+    keywords: ['runway', 'ai'],
+    name: 'Runway',
+    darkInvert: true,
   },
   {
     homepage: 'https://kimi.moonshot.cn/',
@@ -172,8 +179,14 @@ export default <AppItem[]>[
     darkInvert: true,
   },
   {
+    homepage: 'https://www.skypack.dev/',
+    repository: 'https://github.com/skypackjs',
+    icon: 'skypack.png',
+    keywords: ['skypack', 'cdn'],
+    name: 'Skypack',
+  },
+  {
     homepage: 'https://www.bootcdn.cn/',
-    repository: 'https://github.com/bootcdn',
     icon: 'bootcdn.png',
     keywords: ['bootcdn', 'cdn'],
     name: 'BootCDN',
@@ -184,6 +197,12 @@ export default <AppItem[]>[
     icon: 'mdn.png',
     keywords: ['mdn'],
     name: 'MDN',
+  },
+  {
+    homepage: 'https://web.dev/',
+    icon: 'webdev.png',
+    keywords: ['web dev'],
+    name: 'web.dev',
   },
   {
     homepage: 'https://javascript.info/',
@@ -356,6 +375,12 @@ export default <AppItem[]>[
     icon: 'feishu.png',
     keywords: ['飞书', 'feishu'],
     name: '飞书',
+  },
+  {
+    homepage: 'https://www.xiaohongshu.com/',
+    icon: 'xhs.png',
+    keywords: ['小红书', 'xiaohongshu', 'xhs'],
+    name: '小红书',
   },
   {
     homepage: 'https://juejin.im/',

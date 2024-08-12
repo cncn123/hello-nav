@@ -6,56 +6,77 @@
   </picture>
 </div>
 
-## A pure navigation for developers
+# Hello Nav - A purely front-end development navigation
 
-[https://hello-nav.github.io](https://hello-nav.github.io)
+## 🌐 Website
+
+Visit the website: [hello-nav.github.io](https://hello-nav.github.io)
+
+## 🛠 Chrome new-tab extension
+
+Add Hello Nav to your Chrome: [Chrome Web Store](https://chromewebstore.google.com/detail/hello-nav/plcklfadokmohkcifkhlelmcilgnpmcd)
 
 ## 🗺 Features
 
-- 300+ popular apps
-- Keyword Search
-- Quickly open GitHub links
-- List and Category display
-- Set favorites app
-- Chrome new-tab extension
-- Dark mode
+- Access 300+ Popular Apps
+- Easily Open GitHub Link
+- Powerful Keyword Search
+- Flexible List & Category Views
+- Mark Your Favorite Apps
+- Navigate Through Categories With Sidebar
+- Full Dark Mode Support
+- Chrome New-Tab Integration
 
-## 🎨 Design
+## 🎨 Design Overview
 
-![hello-nav](./doc/images/hello-nav.png)
+![image](https://github.com/user-attachments/assets/280df9e4-a90e-458e-b9f7-630d8e410f9c)
 
-![hello-nav-dark](./doc/images/hello-nav-dark.png)
+![image](https://github.com/user-attachments/assets/5755b9a1-4f94-48ed-a8f2-558025f555fc)
 
-## 👩🏻‍💻 Develop & Build
+## ⚡️ Hello Nav on Raycast
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/0902cef4-ebe3-419b-b9af-6241bf393a81" />
+</div>
+
+## 🎩 Hello Nav on Alfred
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/c5614985-0608-4019-8484-d4b13566de5f" />
+</div>
+
+## 👩🏻‍💻 Development & Build Instructions
+
+> Note: pnpm is required!
+
+### Clone and Setup
 
 ```bash
-# Clone project
-git clone https://github.com/hello-nav/hello-nav.git
+# Clone the repository and navigate into the project directory
+git clone https://github.com/hello-nav/hello-nav.git && cd hello-nav
 
-# Change directory to project directory
-cd hello-nav
-
-# Installation dependencies
+# Install dependencies
 pnpm install
+```
 
-# Develop project
+### Development
+
+```bash
+# Build the library and start the development server
+pnpm run build:lib
 pnpm run dev
 ```
 
+### Build for Production
+
 ```bash
-# Build project
+# Build the library and project for production
+pnpm run build:lib
 pnpm run build
 ```
 
-## 💬 Discussion
-
-Hello Nav wechat group:
-
-<img width="200" src="https://github.com/hello-nav/hello-nav/assets/19926530/7348d452-dba6-460d-ae31-863b1ff10376"/>
-
-
 ## 📄 License
 
-Hello Nav is [MIT](https://github.com/hello-nav/hello-nav/blob/master/LICENSE) license.
+Hello Nav is licensed under the [MIT license](https://github.com/hello-nav/hello-nav/blob/master/LICENSE).
 
 © 2018-present Bener
