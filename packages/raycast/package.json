@@ -1,10 +1,10 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
-  "name": "hello-nav-raycast",
+  "name": "hello-nav-launcher",
   "title": "Hello Nav",
   "description": "Hello Nav Launcher",
   "icon": "logo.png",
-  "author": "Bener",
+  "author": "heroor",
   "categories": [
     "Web"
   ],
@@ -30,6 +30,6 @@
     "dev": "ray develop",
     "fix-lint": "ray lint --fix",
     "lint": "ray lint",
-    "publish": "npx @raycast/api@latest publish"
+    "publish": "pnpx @raycast/api@latest publish"
   }
 }
