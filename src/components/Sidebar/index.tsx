@@ -9,6 +9,8 @@ import iconServer from '../../assets/images/icon-server.svg'
 import iconOther from '../../assets/images/icon-other.svg'
 import iconWebsite from '../../assets/images/icon-website.svg'
 import iconTop from '../../assets/images/icon-top.svg'
+import iconSocialMedia from '../../assets/images/icon-social-media.svg'
+import iconLLM from '../../assets/images/icon-llm.svg'
 import './index.less'
 
 const icons: any = {
@@ -20,6 +22,9 @@ const icons: any = {
   'runtime/server': iconServer,
   other: iconOther,
   website: iconWebsite,
+  'social/media': iconSocialMedia,
+  llm: iconLLM,
+
 }
 
 const Sidebar = ({ list, type, hasFavorite }: ContainWrapProp & { hasFavorite: boolean }) => {
