@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './index.less'
 
 interface PandaBtnProps {
@@ -24,6 +24,28 @@ function toggleTheme(isStatusTrue: boolean) {
 
 export default function PandaBtn({ onClick }: PandaBtnProps) {
   const [status, setStatus] = useState(!!window.localStorage.__THEME__)
+
+  useEffect(() => {
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+    const handleChange = (e: MediaQueryListEvent) => {
+      const isDarkMode = e.matches
+      toggleTheme(isDarkMode)
+      setStatus(isDarkMode)
+    }
+
+    // Set initial theme based on system preference
+    const isDarkMode = darkModeMediaQuery.matches
+    toggleTheme(isDarkMode)
+    setStatus(isDarkMode)
+
+    // Listen for changes in system theme preference
+    darkModeMediaQuery.addEventListener('change', handleChange)
+
+    return () => {
+      darkModeMediaQuery.removeEventListener('change', handleChange)
+    }
+  }, [])
+
   const classNames = ['panda-btn', status ? 'active' : ''].join(' ')
 
   const handleClick: React.MouseEventHandler = e => {
