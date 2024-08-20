@@ -26,27 +26,24 @@ function toggleTheme(status: boolean) {
 
 export default function PandaBtn({ onClick }: PandaBtnProps) {
   const [status, setStatus] = useState(!!window.localStorage.__THEME__)
-  console.log('status', status)
   useEffect(() => {
-    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    console.log('darkModeMediaQuery', darkModeMediaQuery)
+    const lightModeMediaQuery = window.matchMedia('(prefers-color-scheme: light)')
     const handleChange = (e: MediaQueryListEvent) => {
-      const isDarkMode = e.matches
-      toggleTheme(isDarkMode)
-      setStatus(isDarkMode)
+      const isLightMode = e.matches
+      toggleTheme(isLightMode)
+      setStatus(isLightMode)
     }
 
     // Set initial theme based on system preference
-    const isLightMode = !darkModeMediaQuery.matches
-    console.log('isDarkMode', isLightMode)
+    const isLightMode = lightModeMediaQuery.matches
     toggleTheme(isLightMode)
     setStatus(isLightMode)
 
     // Listen for changes in system theme preference
-    darkModeMediaQuery.addEventListener('change', handleChange)
+    lightModeMediaQuery.addEventListener('change', handleChange)
 
     return () => {
-      darkModeMediaQuery.removeEventListener('change', handleChange)
+      lightModeMediaQuery.removeEventListener('change', handleChange)
     }
   }, [])
 
