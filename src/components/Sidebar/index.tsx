@@ -17,12 +17,12 @@ const icons: any = {
   favorites: iconFavorite,
   framework: iconFramework,
   library: iconLibrary,
-  'html/css': iconHtmlCss,
-  'ui/design': iconUIDesign,
-  'runtime/server': iconServer,
+  'html css': iconHtmlCss,
+  'ui design': iconUIDesign,
+  'runtime server': iconServer,
   other: iconOther,
   website: iconWebsite,
-  'social/media': iconSocialMedia,
+  'social media': iconSocialMedia,
   llm: iconLLM,
 
 }
