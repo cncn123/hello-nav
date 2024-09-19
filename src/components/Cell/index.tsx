@@ -10,7 +10,8 @@ function onClickApp(appItem: AppItem) {
       event_label: 'app',
       value: appItem.name,
     })
-  } catch (e) {}
+  } catch (e) {
+  }
 }
 
 function onCornerClick(e: React.SyntheticEvent, appItem: AppItem) {
@@ -22,7 +23,8 @@ function onCornerClick(e: React.SyntheticEvent, appItem: AppItem) {
       event_label: 'app-repo',
       value: appItem.name,
     })
-  } catch (e) {}
+  } catch (e) {
+  }
   window.open(appItem.repository)
   return false
 }
@@ -54,11 +56,13 @@ const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boo
         <div className="img-box">
           <img src={icon} className={imgClass} alt={name} />
         </div>
-        <p className="title" data-size={size}>
+        <p className="title" data-size={size}
+           style={{ whiteSpace: 'nowrap', overflow: 'visible', textOverflow: 'ellipsis' }}>
           {name}
         </p>
         {repository && (
-          <div onKeyDown={() => {}} onClick={e => onCornerClick(e, appItem)} className="corner">
+          <div onKeyDown={() => {
+          }} onClick={e => onCornerClick(e, appItem)} className="corner">
             <div className="corner-icon-wrap">
               <img className="corner-icon" draggable={false} src={gitHubIcon} alt="" />
             </div>
