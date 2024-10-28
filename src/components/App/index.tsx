@@ -2,6 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { IGNORE_KEYWORD_REG, transformAppKeyWords } from '../../utils'
 import { AppsContext } from '../../hooks/index'
 import libraryTree from '@hello-nav/model'
+import Header from '../Header'
 import ActionBar from '../ActionBar'
 import ContainWrap from '../Contain'
 import WithError from '../WithError'
@@ -73,6 +74,7 @@ function App() {
 
   return (
     <div className="body">
+      <Header />
       <ActionBar
         filterKey={filterKey}
         onInput={(e: React.ChangeEvent<HTMLInputElement>) => setFilterKey(e.target.value)}
