@@ -10,6 +10,7 @@
   padding: 15px 0;
   border-bottom: 1px solid var(--nav-border-color);
   transition: all 0.3s;
+  
 
   .header-content {
     max-width: 1400px;
@@ -35,14 +36,14 @@
     letter-spacing: 0.5px;
     
     .logo-text {
-      color: var(--nav-text-primary);
+      color: var(--nav-color-primary);;
     }
   }
 
   .subtitle {
     font-family: 'Maple UI', sans-serif;
     font-size: 13px;
-    color: var(--nav-text-regular);
+    color: var(--nav-color-primary);
     opacity: 0.75;
     margin-left: 2px;
     letter-spacing: 0.5px;
@@ -50,17 +51,6 @@
   }
 }
 
-// 暗色主题样式
-:root.theme--dark {
-  .nav-header {
-    .logo-text {
-      color: var(--nav-text-primary);
-    }
-    .subtitle {
-      color: var(--nav-text-regular);
-    }
-  }
-}
 
 // 响应式设计
 @media (max-width: 768px) {

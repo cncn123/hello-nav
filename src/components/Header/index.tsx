@@ -7,9 +7,9 @@ const Header: React.FC = () => {
       <div className="header-content">
         <div className="header-left">
           <div className="logo">
-            <span className="logo-text">DevNav</span>
+            <span className="logo-text">Bobby's Space</span>
           </div>
-          <div className="subtitle">开发者导航</div>
+          <div className="subtitle">Bobby 空间</div>
         </div>
       </div>
     </header>
