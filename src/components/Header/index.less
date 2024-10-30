@@ -4,13 +4,17 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  background: var(--nav-bg-regular);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: rgba(var(--nav-bg-regular-rgb), 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 15px 0;
   border-bottom: 1px solid var(--nav-border-color);
-  transition: all 0.3s;
-  
+  transform: translateY(0);
+  transition: all 0.3s ease;
+
+  &--hidden {
+    transform: translateY(-100%);
+  }
 
   .header-content {
     max-width: 1400px;
@@ -48,9 +52,24 @@
     margin-left: 2px;
     letter-spacing: 0.5px;
     transform: translateY(-2px);
+    transition: color 0.3s;
   }
 }
 
+// 暗色模式样式
+:root.theme--dark .nav-header {
+  background: rgba(var(--nav-header-bg));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  .logo-text {
+    color: var(--nav-color-primary);
+  }
+
+  .subtitle {
+    color: var(--nav-color-primary);
+  }
+}
 
 // 响应式设计
 @media (max-width: 768px) {
