@@ -13,13 +13,25 @@ import Footer from '../Footer'
 const CATEGORY_TYPES: CategoryTypes = ['category', 'list']
 const ContainWithNotFind = WithError<ContainWrapProp>(ContainWrap, Message)
 
+// libraryMap 用于存储两种展示模式的数据：分类模式和列表模式
 const libraryMap: LibraryMap = {
+  // 分类模式：保持原有的树形结构
+  // libraryTree 的结构为：Array<{ title: string, children: AppItem[] }>
   category: libraryTree,
+
+  // 列表模式：将所有应用平铺到一个数组中
   list: libraryTree.reduce((res: AppItem[], item: CateItem) => {
+    // 处理每个应用的关键词，用于搜索功能
+    // transformAppKeyWords 会将应用的名称和其他属性转换为搜索关键词
     item.children.forEach(transformAppKeyWords)
+
+    // 将当前分类下的所有应用添加到结果数组中
+    // 使用展开运算符 (...) 将子数组中的元素添加到主数组
     res.push(...item.children)
+
+    // 返回累积的结果数组，供下一次迭代使用
     return res
-  }, []),
+  }, []), // 初始值为空数组
 }
 
 const filterListByKey = (list: AppItem[], key: string) =>
