@@ -47,7 +47,7 @@ const Header: React.FC = () => {
           <div className="logo">
             <span className="logo-text">Bobby's Space</span>
           </div>
-          <div className="subtitle">Bobby 空间</div>
+          <div className="subtitle">Bobby的空间</div>
         </div>
       </div>
     </header>

@@ -58,15 +58,18 @@ function App() {
   const { favoriteApps, filterKey, setFilterKey } = useContext(AppsContext)
   const newFilterKey = filterKey.trim().toLowerCase().replace(IGNORE_KEYWORD_REG, '')
   const libraries: (AppItem | CateItem)[] =
-    type === 'category'
-      ? [
-          {
-            title: 'favorites',
-            children: favoriteApps,
-          },
-          ...libraryMap[type],
-        ]
-      : [...favoriteApps, ...libraryMap[type]]
+  type === 'category'
+    ? [  // 分类模式
+        {
+          title: 'favorites',
+          children: favoriteApps,  // 收藏的应用
+        },
+        ...libraryMap[type],      // 其他分类
+      ]
+    : [  // 列表模式
+        ...favoriteApps,          // 收藏的应用
+        ...libraryMap[type]       // 其他应用
+      ]
 
   let filteredLibraries = genFilteredByList(libraries, type, newFilterKey)
 

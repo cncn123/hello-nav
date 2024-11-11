@@ -3,7 +3,7 @@ import './index.less'
 const Footer = () => (
   <div className="footer__wrap">
     <a href="https://github.com/cncn123/hello-nav" className="logo vertical-center">
-      Bobby Space
+      Bobby's Space
     </a>
     <div className="footer__copyright">
       <span className="vertical-center">
