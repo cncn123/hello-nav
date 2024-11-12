@@ -70,6 +70,7 @@ const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boo
         )}
       </a>
       <div className="app-back">
+        {/* 头部：显示图标和名称 */}
         <div className="app-setting-head">
           <img src={icon} className={imgClass} alt={name} />
           <p className="title" data-size={size} title={name}>

@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import GlobPlugin from 'vite-plugin-glob'
+import path from 'path'
 
 export default defineConfig({
   plugins: [react(), GlobPlugin()],
