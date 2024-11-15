@@ -158,5 +158,5 @@ const AppsProvider = ({ children }: any) => {
 
   return <AppsContext.Provider value={value}>{children}</AppsContext.Provider>
 }
-
 export { AppsContext, AppsProvider }
+

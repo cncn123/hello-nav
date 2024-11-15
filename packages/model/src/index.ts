@@ -1,26 +1,35 @@
-// 1. 首先定义常量和函数
-const PATH_REG = /^.*\d{2}-(.*)\.ts$/
-
-function getModules(context: Record<string, AppItem[]>): CateItem[] {
-  // 4. 当 getModules 被调用时，执行这里的逻辑
-  return Object.keys(context).map((path: string) => ({
-    title: path.replace(PATH_REG, (_, $1) => $1.replace('_', ' ')),
-    children: context[path].map(item => ({
-      ...item,
-      // 5. 对每个 item 处理时会调用 getIconUrl
-      icon: getIconUrl(item.icon),
-    })),
-  }))
+// 添加新的类型定义
+interface AppResponse {
+  success: boolean;
+  data: CateItem[];
+  message?: string;
 }
 
-// 2. 模块初始化时，执行 importGlob
-// 立即加载所有匹配的模块文件，结果存储在 context 中
-const context: Record<string, AppItem[]> = import.meta.importGlob('./module/*.ts', {
-  eager: true,
-  import: 'default',
-})
+// 修改 getModules 函数，添加 API 调用
+async function getModules(): Promise<CateItem[]> {
+  try {
+    const response = await fetch('/api/apps');
+    const result: AppResponse = await response.json();
+    
+    if (!result.success) {
+      throw new Error(result.message || '获取应用列表失败');
+    }
+    
+    return result.data.map(category => ({
+      ...category,
+      children: category.children.map(item => ({
+        ...item,
+        icon: getIconUrl(item.icon),
+      })),
+    }));
+  } catch (error) {
+    console.error('获取应用列表出错:', error);
+    return [];
+  }
+}
 
 function getIconUrl(filename: string): string {
+  console.log(filename)
   // 6. 根据运行环境返回相应的图标 URL
   if (typeof window !== 'undefined') {
     return new URL(`../public/icons/${filename}`, import.meta.url).href
@@ -29,9 +38,9 @@ function getIconUrl(filename: string): string {
   }
 }
 
-// 3. 模块初始化时，执行 getModules(context)
+// 3. 模块初始化时，执行 getModules()
 // 将结果作为默认导出
-export default <CateItem[]>getModules(context)
+export { getModules }  // 导出函数而不是直接导出 Promise
 
 // 最终导出的格式
 // [
