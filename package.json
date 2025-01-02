@@ -12,7 +12,8 @@
   "scripts": {
     "dev": "pnpm --filter @hello-nav/client run dev",
     "dev:lib": "pnpm --filter @hello-nav/model run dev",
-    "dev:server": "pnpm --filter @hello-nav/server run dev",
+    "dev:server": "cross-env NODE_ENV=development pnpm --filter @hello-nav/server run dev",
+    "dev:all": "concurrently \"pnpm dev:server\" \"pnpm dev\"",
     "build": "pnpm --filter @hello-nav/client run build",
     "build:lib": "pnpm --filter @hello-nav/model run build",
     "build:server": "pnpm --filter @hello-nav/server run build",
@@ -35,6 +36,8 @@
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^1.3.0",
     "autoprefixer": "^10.4.19",
+    "concurrently": "^7.5.0",
+    "cross-env": "^7.0.3",
     "eslint": "^7.32.0",
     "less": "^4.2.0",
     "prettier": "^3.2.5",
