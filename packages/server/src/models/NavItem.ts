@@ -41,4 +41,4 @@ const navItemSchema = new mongoose.Schema({
 navItemSchema.index({ category: 1 });
 navItemSchema.index({ title: 'text', description: 'text', keywords: 'text' });
 
-export const NavItem = mongoose.model('NavItem', navItemSchema);
+export const NavItem = mongoose.model('NavItem', navItemSchema, 'navitems');
