@@ -26,4 +26,9 @@ dist-ssr
 *.sln
 *.sw?
 *.zip
+
+# env files
+.env
+.env.local
+.env.development
 .env.production
