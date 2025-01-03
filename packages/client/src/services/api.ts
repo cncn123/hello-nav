@@ -1,10 +1,9 @@
 import axios from 'axios';
-import type { NavItem, ApiResponse } from './types';
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+import type { NavItem } from './types';
+import { API_CONFIG } from '../config';
 
 const api = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: API_CONFIG.baseUrl,
   timeout: 10000,
 });
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useNavigation } from '../hooks/useNavigation';
-import type { NavigationItem } from '@nav/model';
+import type { NavigationItem } from '../types/nav';
 
 const getIconUrl = (icon: string) => {
   if (!icon) return null;
@@ -21,7 +21,7 @@ const getPlaceholderImage = (title: string) => {
 };
 
 export const NavList: React.FC = () => {
-  const { items, categories, loading, error } = useNavigation();
+  const { items, categories, error } = useNavigation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [localItems, setLocalItems] = useState<NavigationItem[]>([]);
@@ -228,7 +228,7 @@ export const NavList: React.FC = () => {
                         {item.icon && (
                           <div className="flex-shrink-0 transition-transform duration-500 group-hover:scale-105">
                             <img
-                              src={getIconUrl(item.icon)}
+                              src={getIconUrl(item.icon) || undefined}
                               alt={item.title}
                               className="w-10 h-10 object-contain rounded-xl p-1.5 bg-white/70 backdrop-blur-xl shadow-sm border border-white/20 transition-all duration-300 group-hover:shadow-md group-hover:border-white/40 group-hover:bg-white/90"
                               onError={(e) => {

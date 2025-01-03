@@ -1,4 +1,4 @@
-import Cell, { PlaceholderCell } from '../Cell'
+import Cell from '../Cell'
 import './index.less'
 
 const Contain = (list: AppItem[], cate: CateItem | null, isSettingMode: boolean) => (

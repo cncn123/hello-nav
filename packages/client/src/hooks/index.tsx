@@ -3,16 +3,16 @@ import { useState, useEffect, createContext, useCallback } from 'react'
 const AppsContext = createContext({
   favoriteApps: [] as Array<AppItem>,
   favoriteAppNames: [] as string[],
-  setFavoriteApps: (apps: Array<AppItem>) => {},
-  toggleFavorite: (app: AppItem) => {},
-  moveLeft: (app: AppItem) => {},
-  moveRight: (app: AppItem) => {},
+  setFavoriteApps: (_: Array<AppItem>) => {},
+  toggleFavorite: (_: AppItem) => {},
+  moveLeft: (_: AppItem) => {},
+  moveRight: (_: AppItem) => {},
   hiddenApps: [] as Array<AppItem>,
   hiddenAppNames: [] as string[],
-  setHiddenApps: (apps: Array<AppItem>) => {},
-  toggleVisible: (app: AppItem) => {},
+  setHiddenApps: (_: Array<AppItem>) => {},
+  toggleVisible: (_: AppItem) => {},
   filterKey: '' as string,
-  setFilterKey: (str: string) => {},
+  setFilterKey: (_: string) => {},
 })
 
 const AppsProvider = ({ children }: any) => {
@@ -159,4 +159,3 @@ const AppsProvider = ({ children }: any) => {
   return <AppsContext.Provider value={value}>{children}</AppsContext.Provider>
 }
 export { AppsContext, AppsProvider }
-

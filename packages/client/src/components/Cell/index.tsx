@@ -30,8 +30,8 @@ function onCornerClick(e: React.SyntheticEvent, appItem: AppItem) {
 }
 
 const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boolean }) => {
-  const { name, icon, homepage, repository, darkInvert, lessRadius, title } = appItem
-  const { favoriteAppNames, hiddenAppNames, filterKey, moveLeft, moveRight, toggleFavorite, toggleVisible } =
+  const { name, icon, homepage, repository, darkInvert, lessRadius } = appItem
+  const { filterKey, moveLeft, moveRight, toggleFavorite, hiddenAppNames } =
     useContext(AppsContext)
   const imgClass = [darkInvert ? 'dark-invert' : '', lessRadius ? 'less-radius' : ''].join(' ')
   const size =
@@ -45,12 +45,9 @@ const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boo
         : 'small'
       : 'normal'
 
-  const isFavoriteApp =
-    (!title || title !== 'favorites') && !appItem.favorite && favoriteAppNames.includes(appItem.name)
   const isHiddenApp = hiddenAppNames.includes(appItem.name)
-  const visible = isHiddenApp ? appItem.isSettingMode : true || isFavoriteApp
 
-  return !isFavoriteApp ? (
+  return (
     <li className={`cell ${isHiddenApp ? 'hide' : ''} ${appItem.favorite ? 'favorite' : ''}`}>
       <a className="app" href={homepage} title={name} onClick={() => onClickApp(appItem)}>
         <div className="img-box">
@@ -78,12 +75,6 @@ const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boo
           </p>
         </div>
         <div className="app-setting-content">
-          {/* {!appItem.favorite && (
-            <div
-              className={`icon ${hiddenAppNames.includes(appItem.name) ? 'icon-hide' : 'icon-show'}`}
-              onClick={() => toggleVisible(appItem)}
-            ></div>
-          )} */}
           {appItem.favorite && !filterKey && (
             <div
               className={`icon icon-left ${appItem.first ? 'disabled' : ''}`}
@@ -100,11 +91,10 @@ const Cell = (appItem: AppItem & { title: string | undefined; isSettingMode: boo
               onClick={() => moveRight(appItem)}
             ></div>
           )}
-          {/* <div className="icon icon-edit" onClick={() => onEditApp(appItem)}></div> */}
         </div>
       </div>
     </li>
-  ) : null
+  )
 }
 
 export const PlaceholderCell = () => (
