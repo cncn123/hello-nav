@@ -3,5 +3,8 @@
   "subtitle": "精心策划的资源收藏",
   "search": {
     "placeholder": "搜索资源..."
+  },
+  "categories": {
+    "all": "全部"
   }
 }

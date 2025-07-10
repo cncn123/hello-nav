@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 interface NavCategoriesProps {
   categories: string[];
@@ -11,6 +12,8 @@ export const NavCategories: React.FC<NavCategoriesProps> = ({
   selectedCategory,
   onSelect,
 }) => {
+  const { t } = useTranslation();
+  
   if (!categories.length) return null;
 
   return (
@@ -24,7 +27,7 @@ export const NavCategories: React.FC<NavCategoriesProps> = ({
               : 'bg-white/50 dark:bg-gray-900/50 hover:bg-white/70 dark:hover:bg-gray-800/70 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-200'
             }`}
         >
-          全部
+          {t('categories.all')}
         </button>
         {categories.map((category) => (
           <button

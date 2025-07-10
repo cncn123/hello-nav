@@ -3,5 +3,8 @@
   "subtitle": "A curated collection of my favorite resources",
   "search": {
     "placeholder": "Search resources..."
+  },
+  "categories": {
+    "all": "All"
   }
 }
