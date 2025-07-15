@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ES5",
     "useDefineForClassFields": true,
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -15,8 +19,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["vite-plugin-glob/client"]
+    "types": [
+      "vite-plugin-glob/client"
+    ]
   },
-  "include": ["src", "packages"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": [
+    "packages",
+    "scripts",
+    "test"
+  ]
 }
